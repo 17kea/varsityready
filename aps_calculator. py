@@ -1,0 +1,18 @@
+# VarsityReady - APS Calculator
+def calculate_aps(marks):
+    # South African APS Table
+    aps_table = {
+        80: 7, 70: 6, 60: 5, 50: 4, 40: 3, 30: 2, 0: 1
+    }
+    total = 0
+    for mark in marks:
+        for key in sorted(aps_table.keys(), reverse=True):
+            if mark >= key:
+                total += aps_table[key]
+                break
+    return total
+
+# Test
+my_marks = [78, 65, 82, 55, 60, 70, 45]
+print(f"Your APS: {calculate_aps(my_marks)} / 42")
+print("VarsityReady by 17kea")
